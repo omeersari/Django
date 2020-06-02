@@ -6,7 +6,7 @@ from django import forms
 
 
 
-class KonularAdmin(admin.ModelAdmin): 
+class KonuAdmin(admin.ModelAdmin): 
 
     def konular_ders(self, obj):
          subject_object = Konu.objects.get(id=obj.konular_ders)
@@ -34,7 +34,7 @@ class KonularAdmin(admin.ModelAdmin):
     get_kategori.admin_order_field = 'konular_ders__dersler_kategori'
 
 
-class DerslerAdmin(admin.ModelAdmin):
+class DersAdmin(admin.ModelAdmin):
     
     list_display= [
         'id',
@@ -56,7 +56,7 @@ class KategoriAdmin(admin.ModelAdmin):
 
     ]
     
-class TestlerAdmin(admin.ModelAdmin):
+class TestAdmin(admin.ModelAdmin):
     # prepopulated_fields = {"slug": ("title",)}
     list_display = [
         'id',
@@ -80,7 +80,7 @@ class TestlerAdmin(admin.ModelAdmin):
 
     
 
-class SorularAdmin(admin.ModelAdmin):
+class SoruAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE()},
         }
@@ -88,7 +88,7 @@ class SorularAdmin(admin.ModelAdmin):
     list_display = [ 'soru_sirasi' , 'soru_test']
        
     
-class CevaplarAdmin(admin.ModelAdmin):
+class CevapAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.CharField: {'widget': TinyMCE()},
         }
@@ -103,7 +103,7 @@ class CevaplarAdmin(admin.ModelAdmin):
     getTest.short_description = "TEST"
 
 
-class YayinlarAdmin(admin.ModelAdmin):
+class YayinAdmin(admin.ModelAdmin):
     
     list_display = [ 'id', 'yayin_title']
 
@@ -112,9 +112,9 @@ class YayinlarAdmin(admin.ModelAdmin):
 
     
 admin.site.register(Kategori, KategoriAdmin)
-admin.site.register(Ders, DerslerAdmin)
-admin.site.register(Konu, KonularAdmin)
-admin.site.register(Yayın, YayinlarAdmin)
-admin.site.register(Test, TestlerAdmin)
-admin.site.register(Soru, SorularAdmin)
-admin.site.register(Cevap, CevaplarAdmin)
+admin.site.register(Ders, DersAdmin)
+admin.site.register(Konu, KonuAdmin)
+admin.site.register(Yayın, YayinAdmin)
+admin.site.register(Test, TestAdmin)
+admin.site.register(Soru, SoruAdmin)
+admin.site.register(Cevap, CevapAdmin)
