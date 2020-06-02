@@ -90,7 +90,7 @@ class SoruAdmin(admin.ModelAdmin):
     
 class CevapAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.CharField: {'widget': TinyMCE()},
+        models.TextField: {'widget': TinyMCE()},
         }
     
     list_display = [ 'id', 'cevap_soru', 'cevap_correct_anwser']

@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, User
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import logout, authenticate, login
 from .forms import NewUserForm, EditUserNameForm, EditEmailForm
-from .helpers import generate_activation_key
+#from .helpers import generate_activation_key
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user, allowed_users
 
@@ -170,12 +170,18 @@ def premium(request):
 
 def get_premium(request):
     return render(request,
-                "premium/get_premium.html")
+                "main/premium/get_premium.html")
 
 
 def iletisim(request):
     return render(request,
                  "main/iletisim.html")
+
+def yardim(request):
+    return render(request,
+                 "main/yardim.html")
+
+    
 
 
 

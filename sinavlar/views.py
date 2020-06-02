@@ -23,7 +23,7 @@ def single_slug(request, single_slug):
 
         
         series_url = {}
-        for m in matching_dersler.filter(konular__isnull=False):
+        for m in matching_dersler.filter(konu__isnull=False):
             deneme = m.dersler_kategori # Türkçe Kategoriye gitti yani KPSS
             part_one = Konu.objects.filter(konular_ders__dersler_kategori__pk=deneme.pk)
             konularr = part_one.filter(konular_ders__pk = m.pk)

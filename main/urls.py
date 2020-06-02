@@ -36,6 +36,7 @@ urlpatterns = [
     path("premium/", views.premium, name="premium"),
     path("get_premium/", views.get_premium, name="get_premium"),
     path("iletisim/", views.iletisim, name="iletisim"),
+    path("yardim/", views.yardim, name="yardim"),
     
 
     
