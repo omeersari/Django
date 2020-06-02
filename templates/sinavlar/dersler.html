@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<br><br>
+
+<div class="container">
+
+  {% for ders, url in konular_slug.items %}
+  <div class="col s12 m6 l4">
+
+    <div class="card purple accent-4">
+
+      <div class="card-content white-text">
+
+        <span class="card-title">{{ders.dersler_title}}</span>
+        <p>{{ders.dersler_content}}</p>
+     </div>
+     
+      <div class="card-action">
+        <a href="{{url}}" class="white-text text-lighten-1">KONULARA GİT</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
+
+
+<div class="container row">
+  {% for ders, partone in part_ones.items %}
+
+      <div class="col s12 m6 l4">
+        <div class="card purple accent-4">
+              <div class="card-content white-text">
+                  <!-- <img src="{{ders.dersler_image.url}}" class="img-responsive" style="width: 100% "> -->
+                <span class="card-title">{{ders.dersler_title}}</span>
+                <p>{{ders.dersler_content}}</p>
+              </div>
+              <div class="card-action">
+                <a href="{{partone}}" class="white-text text-lighten-1">KONULAR</a>
+                <a href="#" class="white-text text-lighten-1">TESTLER</a>
+              </div>
+          </div>
+      </div>
+  {% endfor %}
+</div>

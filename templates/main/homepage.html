@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <img src="{% static 'images/image1.jpg'%}" alt="image one">
+      <div class="caption center-align white-text">
+        <h3>SORUPUNK- #DahaÇokSoru</h3>
+        <h5 class="light text-lighten-3">Tüm yayınları sizinle buluşturuyoruz ! </h5>
+      </div>
+    </li>
+    <li>
+      <img src="{% static 'images/image2.jpg'%}" alt="image two">
+      <div class="caption center-align white-text">
+        <h3>SORUPUNK- #DahaHafif</h3>
+        <h5 class="light text-lighten-3 ">Kitaplar da olmadan istediğiniz yerde istediğiniz kadar soru !</h5>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+  <div class="section white center">
+    <h3 class="header purple-text text-lighten-3">SORUPUNK NEDİR ?</h3>
+    <div class="row container center">
+        <div class="col center l8 s12 move ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo fuga minus tenetur, placeat, perspiciatis est incidunt deleniti necessitatibus, velit asperiores accusamus cupiditate quae nihil numquam! Repellat sapiente aliquam placeat laudantium praesentium, tenetur consectetur totam, dolorum nesciunt numquam nostrum, temporibus vel earum accusantium! Suscipit dolore, sapiente ea sunt officiis ducimus veritatis perspiciatis voluptas quisquam nesciunt quos in quae repellat! Cumque provident possimus veniam harum fugit laudantium minima, voluptates placeat cupiditate quibusdam commodi! Sit nemo dolore fuga quia natus, reprehenderit expedita totam, architecto excepturi, obcaecati nisi assumenda. Ducimus vitae voluptatibus sed sapiente a velit, sint assumenda, odit et adipisci placeat in suscipit!</div>
+        <div class="col center l4 s12 ">
+          <img src="{% static 'images/kitaplar.jpg' %}" style="height: 200; width: auto; object-fit: contain;" alt="">
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+  
+    <div class="col s12 m12 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'images/bizimlecalis.jpeg'%}">
+          <span class="card-title">Kitabınızı Yayınlayın</span>
+        </div>
+        <div class="card-content">
+          <p>Kitabınızı mı yayınlamak istiyorsunuz. Doğru yerdesiniz. Hemen bizimle iletişime geçin !</p>
+        </div>
+        <div class="card-action">
+          <a href="#" class="purple-text text-darken-4;">Kitabını Yayınla </a>
+        </div>
+      </div>
+    </div>
+  
+
+ 
+    <div class="col s12 m12 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'images/uyeol.jpg'%}" style="height:209;">
+          <span class="card-title">Üye Olun</span>
+        </div>
+        <div class="card-content">
+          <p>Tüm yayınların sorularına erişmek ve birçok avantajdan faydalanmak için üye olun!</p>
+        </div>
+        <div class="card-action">
+          <a href="/register/" class="purple-text text-darken-4;">ÜYE OLUN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m12 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'images/gozat.jpeg'%}">
+          <span class="card-title">Sınavlara Göz Atın</span>
+        </div>
+        <div class="card-content">
+          <p>Hangi sınavlar için hizmet verdiğimize göz atın! Vakit kaybetmeden çalışmaya başlayın.</p>
+        </div>
+        <div class="card-action">
+          <a href="/sinavlar/" class="purple-text text-darken-4;">SINAVLARA GÖZ AT</a>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+  {% endblock %}
+    
+    
+   
+

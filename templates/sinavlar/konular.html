@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col s12, m8, l8">
+            <h3>{{konu.konular_title}}</h3>
+            <p style="font-size:70%">Published {{konu.konular_published}}</p>
+            {{konu.konular_content|safe}}
+        </div>
+
+        
+
+        <div class="col s12 m4 l4">
+            <ul class="collapsible popout">
+                {% for konu in sidebar %}
+                    {% if forloop.counter0 == konular_idx %}
+                        <li class="active">
+                            <div class="collapsible-header">{{konu.konular_title}}<br>(şuan buradasanız)</div>
+                            <p><a href="{% url 'sinavlar:yayinlar' konular_slug=konu.konular_slug  %}"><button class="btn waves-effect waves-light"  style="background-color:purple; color:white; width: 100%;">TESTLERE GİT !</button></a></p>
+                        </li>
+                        
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{konu.konular_title}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="{{konu.konular_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">Git</button></a>
+                                <a href="{% url 'sinavlar:yayinlar' konular_slug=konu.konular_slug  %}"><button class="btn waves-effect waves-light"  style="background-color:purple; color:white;">Testlere Git</button></a></p>
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+   
+
+{% endblock %}

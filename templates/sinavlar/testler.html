@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        {% for test in sidebar %}
+            {% if forloop.counter0 == testler_idx %}
+                <li class="tab"><a class="active" href="{{test.test_slug}}">{{test.test_alt_title}}</a></li>
+            {% else %}
+
+                <li class="tab"><a href="{{test.test_slug}}">{{test.test_alt_title}}</a></li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+   
+    <form method="POST">
+        {% csrf_token %}
+    <div class="card-content grey lighten-4">
+            <div id="{{test.test_slug}}">
+            {%for soru, cevap in soru_cevaplar.items%}
+                <br> <br>
+                
+                <p style="color: red;"> Problem {{soru.soru_sirasi}} ) </p>
+                <br>
+                <p>{{soru.soru_soru|safe}}</p>
+                <br>
+                
+                    {% for c in cevap%}
+                        
+                        <label>
+                            <input name="{{c.cevap_soru}}" type="radio" value="{{c.cevap_correct_anwser}}"/><span>{{c.cevap_content}}</span>
+                        </label>
+                    {% endfor %}
+
+                
+            {% endfor %}
+            
+            
+            </div>
+            <br>
+            
+            {% if soru_cevaplar|length > 0 %}
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Testi Bitir ! </button>
+            {% endif %}
+      </div>
+    </form>
+  </div>
+
+ 
+
+
+
+{% endblock%}
+
+
+<div class="row">
+    <div class="col s12, m8, l10">
+        <h3>{{testler.test_alt_title}}</h3>
+        <p style="font-size:70%">Published {{testler.test_published}}</p>
+        {%for soru, cevap in soru_cevaplar.items%}
+          <p style="color: red;"> Problem {{soru.soru_sirasi}} ) </p>
+          <p>{{soru.soru_soru|safe}}</p>
+  
+          {% for c in cevap%}
+              {{c}}
+          {% endfor %}
+          
+  
+        {% endfor %}
+              <br><br><br>
+      
+        
+    </div>
+  
+    
+    <div class="col s12 m4 l2">
+      <h5>TESTLER</h5>
+        <ul class="collapsible popout">
+            {% for test in sidebar %}
+                {% if forloop.counter0 == testler_idx %}
+                    <li class="active">
+                        <div class="collapsible-header">{{test.test_alt_title}}<br>(şuan buradasanız)</div>
+                        
+                    </li>
+                    
+                {% else %}
+                    <li>
+                        <div class="collapsible-header">{{test.test_alt_title}}</div>
+                        <div class="collapsible-body">
+                              <p><a href="{{test.test_slug}}"><button class="btn waves-effect waves-light"  style="background-color:purple; color:white;">GİT !</button></a></p>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+  </div>

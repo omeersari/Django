@@ -1,0 +1,38 @@
+<nav>
+    <div class="nav-wrapper deep-purple darken-1">
+      <a href="/" class="brand-logo" style="font-family:Bungee Shade">SORUPunk</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="collapsible.html">Yardım</a></li>
+        
+          <li><a href="/duyurular/">Duyurular<span class="new badge">{{yeni}}</span></a></li>
+        
+        <li><a href="/premium/"><i class="material-icons left">whatshot</i>Premium</a></li>
+        <li><a href="/sinavlar/">Sınavlar</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="/account/">{{user.username}}</a></li>
+          <li><a href="/logout/">Çıkış Yap</a></li>
+        {% else %}
+          <li><a href="/register/">Kaydol</a></li>
+          <li><a href="/login/">Giriş Yap</a></li>
+        {% endif %}
+        
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <ul class="sidenav deep-purple darken-3" id="mobile-demo">
+    <li><a href="collapsible.html" style="color: white;">Yardım</a></li>
+    <li><a href="/duyurular" style="color: white;">Duyurular</a></li>
+    <li><a href="/premium" style="color: white;">Premium</a></li>
+    <li ><a href="/sinavlar" style="color: white;">Sınavlar</a></li>
+    {% if user.is_authenticated %}
+      <li><a href="/account" style="color: white;">{{user.username}}</a></li>
+      <li><a href="/logout" style="color: white;">Çıkış Yap</a></li>
+    {% else %}
+      <li><a href="/register" style="color: white;">Kaydol</a></li>
+      <li><a href="/login" style="color: white;">Giriş Yap</a></li>
+    {% endif %}
+  </ul>

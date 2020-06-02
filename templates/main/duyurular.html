@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+  {% for duy in duyurular %}
+      <div class="col s12 m6 l6">
+              <div class="card hoverable">
+                  <div class="card-content purple lighten-5">
+                      <div class="card-title">{{duy.duyurular_title}}</div>
+                      <p>{{duy.duyurular_content}}</p>
+                      
+                  </div>
+              </div>
+          </a>
+      </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

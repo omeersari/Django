@@ -1,0 +1,36 @@
+{% load static %}
+<body>
+    <head>
+        <link href="{% static 'css/normalize.css' %}" rel="stylesheet">
+        <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+        <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+    </head>
+
+    <main>
+
+    {% include "main/includes/navbaritems.html" %}
+    {% include "main/includes/messages.html" %}
+        
+        <div class="row", style="height: 100vh;">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </main>
+
+    {% include "main/includes/footer.html" %}
+
+    <!-- Prism JS -->
+    <script src="{% static 'tinymce/js/prism.js' %}"></script>
+    <script src="{% static 'js/loader.js' %}"></script>
+    
+    
+
+</body>

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<br><br>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+            <button class="btn btn-outline-info deep-purple darken-1" type="submit">Giriş</button>
+        </form>
+        <p>Şifrenizi mi unuttunuz ? <a href="{% url 'password_reset' %}" class="deep-purple-text text-darken-1"><strong> Buradan Sıfırlayın ! </strong> </p></a>
+        
+        <p>
+            Hesabınız yok mu ? <a href="/register"><strong>Buradan Kaydolun ! </strong></a>
+        </p> 
+    </div>
+</div>
+    
+
+
+     
+{% endblock %}

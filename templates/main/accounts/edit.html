@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <h2 class="header">Merhaba, {{user.username}}</h2>
+    <p>Bu bölümde hesabınızla ilgili değiştirmek istediğiniz özellikleri bulabilirsiniz. Güvenliğiniz için şifrenizi kimseyle paylaşmayın ! </p>
+    <div class="col s12 m6 l4">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content", style="background-color: #e1bee7;">
+            <p> Kullanıcı adınızı <a href="/editUsername">değiştirin !</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content", style="background-color: #e1bee7;">
+            <p> Email adresinizi <a href="/editEmail">değiştirin !</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content", style="background-color: #e1bee7;">
+            <p> Şifrenizi <a href="{% url 'password_change'%}">değiştirin </a> !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+    
+
+
+
+
+
+

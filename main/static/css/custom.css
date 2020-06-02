@@ -1,0 +1,29 @@
+.slider .indicators .indicator-item.active{
+  background-color: #ce93d8;
+}
+.collection .collection-item.active{
+  background-color: #9fa8da  ;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+    overflow-y: scroll;
+  }
+
+.move{
+  margin-bottom: 20px;
+}
+
+
+span.badge.new:after{
+  content: "yeni";
+}
+
+.tabs .tab a:hover, .tabs .tab a.active{
+  filter: brightness(1%);
+}

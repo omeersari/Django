@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+  <div class="container row">
+    {% for kat in kategori %}
+        <div class="col s12 m6 l6">
+            <a href="/{{kat.kategori_slug}}", style="color:black">
+                <div class="card hoverable">
+                    <div class="card-content purple lighten-5">
+                        <div class="card-title">{{kat.kategori_title}}</div>
+                        <p>{{kat.kategori_content}}</p>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+  </div>
+
+  
+  {% endblock %}
+    
+    
+   
+
