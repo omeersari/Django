@@ -1,7 +1,7 @@
 # Proje Hakkında
 For English please see below...
 
-Sorupunk ile öğrencilerin herhangi bır sınav için kitaplar alması yerine tüm yayınların buluştuğu ve öğrencilerin bilgisayarlardın veya telefonlarından sorulara erişim sağlanması amaçlanmıştır. 
+Sorupunk ile öğrencilerin herhangi bır sınav için mağazalardan kitaplar alması yerine tüm yayınların buluştuğu ve öğrencilerin bilgisayarlardın veya telefonlarından sorulara erişim sağlanması amaçlanmıştır. 
 
 ## Bu projede aşağıdaki Django özellikleri-metotları kullanılmıştır:
 
@@ -28,7 +28,7 @@ Sorupunk ile öğrencilerin herhangi bır sınav için kitaplar alması yerine t
 
 # About Project
 
-With Sorupunk it is aimed for students to have an online access with computers or mobile phones to all pusblisher's question books instead of buying them.
+With Sorupunk it is aimed for students to have an online access with computers or mobile phones to all pusblisher's question books instead of buying them from stores.
 
 ## Used Django features in this project: 
 
