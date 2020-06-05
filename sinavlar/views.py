@@ -3,6 +3,7 @@ from .models import Kategori, Konu, Ders, Yayın, Test, Soru, Cevap
 from collections import Counter
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+import json
 
 
 # Create your views here.
@@ -94,12 +95,20 @@ def testler(request, test_slug):
     for soru in sorular:
         cevaplar = Cevap.objects.filter(cevap_soru__pk = soru.pk)
         sorular_cevaplar[soru] = [c for c in cevaplar]
+
+
     
 
+    
     return render(request, 'sinavlar/testler.html', {"testler":testler_1,
                                                      "testler_idx":testler_idx,
                                                      "sidebar":diger_testler,
-                                                     "soru_cevaplar":sorular_cevaplar
+                                                     "soru_cevaplar":sorular_cevaplar,
                                                      })
+    # if request.method == "POST":
+    #     request.POST.get('c.cevap_soru')
+    #     context = dict()
+    #     return render(request, 'sinavlar/sonuclar.html', context)
+  
 
-  #                                          
+    

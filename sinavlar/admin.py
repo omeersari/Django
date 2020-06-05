@@ -86,6 +86,8 @@ class SoruAdmin(admin.ModelAdmin):
         }
     
     list_display = [ 'soru_sirasi' , 'soru_test']
+
+    list_filter = ('soru_test',)
        
     
 class CevapAdmin(admin.ModelAdmin):

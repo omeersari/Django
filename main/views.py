@@ -76,7 +76,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"{username} ile giriş yaptınız!")
-                return redirect('/')
+                return redirect('sinavlar:sinavlar')
             else:
                 messages.error(request, "Kullanıcı adı veya şifre hatalı")
         else:
@@ -88,16 +88,16 @@ def login_request(request):
                 "main/login.html",
                 {"form":form})
 
-def activate_account(request):
-    key = request.GET['key']
-    if not key:
-        raise Http404()
+# def activate_account(request):
+#     key = request.GET['key']
+#     if not key:
+#         raise Http404()
  
-    r = get_object_or_404(Author, activation_key=key, email_validated=False)
-    r.user.is_active = True
-    r.user.save()
-    r.email_validated = True
-    r.save()
+#     r = get_object_or_404(Author, activation_key=key, email_validated=False)
+#     r.user.is_active = True
+#     r.user.save()
+#     r.email_validated = True
+#     r.save()
  
     return render(request, 'main/activated.html')
 

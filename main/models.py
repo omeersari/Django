@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.db.models.signals import post_save
+from sinavlar.models import Test, Soru
 
 
 class Duyuru(models.Model):
@@ -30,6 +31,14 @@ class Author(models.Model):
  
     def __str__(self):
         return self.user.username
+
+
+class UserTest(models.Model):
+    user = models.ForeignKey(User, related_name="userr", on_delete = models.CASCADE)
+    yapilan_testler = models.ForeignKey(Test, related_name="test", on_delete=models.CASCADE)
+    dogru_sayisi = models.PositiveSmallIntegerField(default=0)
+    yanlis_sorular = models.ForeignKey(Soru, related_name="soru", on_delete=models.CASCADE)
+
 
 
 

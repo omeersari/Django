@@ -25,6 +25,7 @@ urlpatterns = [
     path("<single_slug>", views.single_slug, name="single_slug"),
     path("yayinlar/<konular_slug>", views.yayinlar, name="yayinlar"),
     path("testler/<test_slug>", views.testler, name="testler"),
+    path("sonuclar/", views.sinavlar, name="sonuclar"),
     
     
     

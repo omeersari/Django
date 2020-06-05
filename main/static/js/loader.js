@@ -7,10 +7,9 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
   
 
-  $("input[type='submit']").click(function(){
+  $("#test").on("click", function(){
     var radioValue = $("input[name='{{c.cevap_soru}}']:checked").val();
-              console.log(radioValue);
-      
+    console.log(radioValue);
   });
 });
 
