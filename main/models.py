@@ -49,3 +49,9 @@ def create_profile(sender, **kwargs):
         user_profile = UserProfile(user=user)
         user_profile.save()
 post_save.connect(create_profile, sender=User)
+
+
+
+
+
+    

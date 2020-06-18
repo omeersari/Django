@@ -17,7 +17,7 @@
       </ul>
     </div>
    
-    
+<form id ='test' method="POST">
     <div class="card-content grey lighten-4">
             <div id="{{test.test_slug}}">
             {%for soru, cevap in soru_cevaplar.items%}
@@ -35,17 +35,15 @@
                         </label>
                     {% endfor %}
 
-                
             {% endfor %}
-            
-            
             </div>
             <br>
             
             {% if soru_cevaplar|length > 0 %}
-            <input id="test" style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit" value="TESTİ BİTİR"></input>
+            <input style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit" value="TESTİ BİTİR"></input>
             {% endif %}
-      </div>
+        </div>
+</form>
     
   </div>
 
